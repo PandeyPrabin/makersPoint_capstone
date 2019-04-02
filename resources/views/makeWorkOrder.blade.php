@@ -5,26 +5,24 @@
        
 
 
+    
 
-<form action="store" method="post" >
 
 <table class ="MWO" >
-    <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-    
-   <tr>
+  <tr>
     <th>Work-id:</th>
-    <td> <input type="text" name="workid" id="workid"></td>
+    <td contenteditable="true"></td>
   </tr>
   <tr>
     <th >Title:</th>
-    <td> <input type="text" name="title" id="title"> </td>
+    <td contenteditable="true"></td>
   </tr>
     <tr>
     <th rowspan="2">Provider</th>
-    <td  ><input class="radio" type="radio" name="provider" value="Yes" contenteditable="false">Yes
-         <input  class="radio" type="radio" name="provider" value="No" contenteditable="false"> No 
+    <td  ><input class="radio" type="radio" name="Y/N" value="Yes" contenteditable="false">Yes
+         <input  class="radio" type="radio" name="Y/N" value="No" contenteditable="false"> No 
       <tr> <td > <span margin-left= "5px" contenteditable="false">Provider Name:</span>
-          <span>  <input type="text" name="provider" id="provider"></span></td>
+          <span contenteditable="true"></span></td>
         </tr>
         
   </tr>
@@ -38,11 +36,11 @@
   </tr>
   <tr>
     <th >Deadline</th>
-    <td> <input class="date" type="date" name="deadline"></td>
+    <td> <input class="date" type="date" name="orderdate"></td>
   </tr>
     <tr>
     <th rowspan="2">Absolute deadline</th>
-    <td ><input class="date" type="date" name="absolutedeadline">
+    <td ><input class="date" type="date" name="orderdate">
         <tr>
         <td ><span contenteditable="false">Reason for absolute deadline:</span>
             <span contenteditable="true"></span></td>
@@ -50,59 +48,47 @@
   </tr>
   <tr>
     <th >Additional info:</th>
-    <td><input type="text" contenteditable="true" name="additionalinfo" id="additionalinfo"></td>
+    <td contenteditable="true"></td>
   </tr>
     <tr>
     <th>No material</th>
-    <td ><input class="radio" type="radio" name="material" value="No material"></td>
+    <td ><input class="radio" type="radio" name="N/Y" value=""></td>
   </tr>
   <tr>
     <th >Add material</th>
-    <td><input class="radio" type="radio" name="material" value="Add material"></td>
+    <td><input class="radio" type="radio" name="N/Y" value=""></td>
   </tr>
     <tr>
     <th>Wetransfer</th>
-    <td > <span contenteditable="false"><input class="radio"  type="radio" name="material" value="Wetransfer"></span>
+    <td > <span contenteditable="false"><input class="radio"  type="radio" name="N/Y" value=""></span>
          <span contenteditable="true"> link here</span>
         </td>
   </tr>
   <tr>
     <th >Existing material</th>
-    <td><input class="radio" type="radio" name="material" value="Existing material"></td>
+    <td><input class="radio" type="radio" name="N/Y" value=""></td>
   </tr>
     <tr>
     <th rowspan ="4">Delivery by:</th>
-    <td><input class="radio" type="radio" name="delivery" value="Customer retrives"> Customer retrives</td>
+    <td><input class="radio" type="radio" name="y/n" value=""> Customer retrives</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Mail"> Mail:</td>
+    <td><input class="radio" type="radio" name="y/n" value=""> Mail:</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Matkahuolto"> Matkahuolto</td>
+    <td><input class="radio" type="radio" name="y/n" value=""> Matkahuolto</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Other"> Other</td>
+    <td><input class="radio" type="radio" name="y/n" value=""> Other</td>
   </tr>
 
 </table>
     <button class="button" type="submit" value="Submit">Submit</button>  
-</form>
+    
 
-
-
-@if($errors->any())
-    <div>
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
-
-    </div>
-@endif
 
 
 

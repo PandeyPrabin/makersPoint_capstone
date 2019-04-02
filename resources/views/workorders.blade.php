@@ -16,44 +16,58 @@
     <th>info</th> 
     <th>??</th>
   </tr>
-
-           
-           @foreach($workorder as $workorder)
-           @if($workorder->material != 'No material')
-            
   <tr>
-      
-    <td>{{$workorder->workid}}</td>
-    <td><a href="/workDetail" class="header-link">{{$workorder->title}}</a></td>
+    <td></td>
+    <td></td>
    <td>
-        
-    <select>
+        <div class="dropdown"><button class="dropbtn" >
+      <i class="fa fa-caret-down"></i>
+    </button>
       <div class="dropdown-content">
-      <option id="Not processing" >Not processing</option>
-      <option id="processing" >processing</option>
-      <option id="ready" >ready</option>
-
-          
+      <a href="#">Not processing</a>
+      <a href="#">Processing</a>
+      <a href="#">Ready</a>
     </div>
-        </select>
-       </td>
+        </div></td>
     <td>
         <div class="dropdown"><button class="dropbtn" >
       <i class="fa fa-caret-down"></i>
     </button>
       <div class="dropdown-content">
-      <a href="#">{{$workorder->provider}}</a>
-      <a href="#">{{$workorder->material}}</a>
+      <a href="#">Subcontractor</a>
+      <a href="#">material info here</a>
      
     </div>
         </div>
       </td>
     <td></td>
-  </tr> 
-           @endif
-
-@endforeach
-           
+  </tr>
+           <tr>
+        <td></td>
+    <td></td>
+   <td>
+        <div class="dropdown"><button class="dropbtn" >
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#">Not processing</a>
+      <a href="#">Processing</a>
+      <a href="#">Ready</a>
+    </div>
+        </div></td>
+    <td>
+        <div class="dropdown"><button class="dropbtn" >
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#">Subcontractor</a>
+      <a href="#">material info here</a>
+     
+    </div>
+        </div>
+      </td>
+    <td></td>
+  </tr>
   
 
 @endsection

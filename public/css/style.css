@@ -2,6 +2,33 @@ html, body {
 	background-color: #f7f7f9;
 }
 
+.login-layout {
+	height: 250px;
+	width: 500px;
+	margin: auto;
+	position: relative;
+
+}
+
+.log-in-header {
+	color: orange;
+}
+
+.log-in-header:hover {
+	color: orange;
+}
+
+.button-log-in {
+	background-color: orange;
+	border: solid 1px orange;
+}
+
+.button-log-in:hover {
+	background-color: #ef8009;
+	border: solid 1px orange;
+}
+
+
 .container-fluid, .container {
 	margin-top: -24px;
 	min-height: 100%;
@@ -37,8 +64,41 @@ html, body {
 	color: orange;
 }
 
-.align-text-bottom { 
-	position: fixed !important;     
-    text-align: center !important;    
-    bottom: 0px !important; 
-    width: 100% !important;
+.profile-layout {
+	position: relative;
+	
+}
+
+.profile-pic {
+	float: left;
+	height: 25%;
+	width: 25%; 
+	margin-right: 50px;
+}
+
+.profile-info {
+	float: left;
+	margin-top: 5%; 
+
+}
+
+.profile-info-edit {
+	float: right;
+	margin-right: 60px;
+}
+
+.profile-info-data {
+	width: 50%;
+	padding: 7px;
+	
+}
+
+.edit-profile-info {
+	float: right;
+}
+
+.save-profile-info {
+	position: absolute;
+	right:    50px;
+	bottom:   0;
+}

@@ -13,8 +13,13 @@ use App\Workorder;
 use Illuminate\Http\Requests;
 
 Route::get('/', function () {
+    return view('login');
+});
+
+Route::get('/home', function () {
     return view('home');
 });
+
 
 Route::get('makeworkorder', 'workorder_controller@makeworkorder');
 //Route::get('editdetails', 'Makeworkorder_controller@edit');
@@ -56,5 +61,15 @@ Route::get('/materials', function () {
 Route::get('/control', function () {
     return view('control');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-edit', function () {
+    return view('profile-edit');
+});
+
+
 
 
