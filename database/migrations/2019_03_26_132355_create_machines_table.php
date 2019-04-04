@@ -14,7 +14,8 @@ class CreateMachinesTable extends Migration
     public function up()
     {
         Schema::create('machines', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('machineid')->primary();
+            $table->string('machinename')->nullable;
             $table->timestamps();
         });
     }

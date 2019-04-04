@@ -10,15 +10,20 @@
 |
 */
 use App\Workorder;
+use App\Employee;
 use Illuminate\Http\Requests;
 
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/addNewCustomer', function () {
+    return view('addNewCustomer');
+});
 
 Route::get('makeworkorder', 'workorder_controller@makeworkorder');
 //Route::get('editdetails', 'Makeworkorder_controller@edit');
 Route::post('store', 'workorder_controller@store');
+//Route::get('profile', 'employee_controller@index');
 
 
 Route::get('/makeWorkOrder', function () {
@@ -41,6 +46,13 @@ Route::get('/earlywarnings',  'workorder_controller@earlywarnings');
 Route::get('/machinetime', function () {
     return view('machinetime');
 });
+
+Route::get('employeeProfile','employee_controller@showemployee');
+
+//Route::get('/employeeProfile', function () {
+//    return view('employeeProfile');
+//});
+
 
 Route::get('/subTask', function () {
     return view('subTask');
