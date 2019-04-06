@@ -24,7 +24,7 @@
   <tr>
       
     <td>{{$workorder->workid}}</td>
-    <td><a href="/workDetail" class="header-link">{{$workorder->title}}</a></td>
+    <td><a href="/workDetail/{{$workorder->workid}}" class="header-link">{{$workorder->title}}</a></td>
    <td>
         
     <select>

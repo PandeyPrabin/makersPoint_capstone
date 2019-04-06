@@ -20,9 +20,11 @@ Route::get('/addNewCustomer', function () {
     return view('addNewCustomer');
 });
 
-Route::get('makeworkorder', 'workorder_controller@makeworkorder');
+Route::get('makeworkorder', 'Makeworkorder_controller@makeworkorder');
 //Route::get('editdetails', 'Makeworkorder_controller@edit');
 Route::post('store', 'workorder_controller@store');
+
+Route::post('put', 'workorder_controller@put');
 //Route::get('profile', 'employee_controller@index');
 
 
@@ -36,9 +38,7 @@ Route::get('/workorders', 'workorder_controller@workorders');
 //    return view('workorders');
 //});
 
-Route::get('/workDetail', function () {
-    return view('/workDetail');
-});
+Route::get('/workDetail/{workid}', 'workorder_controller@workDetail');
 
 Route::get('/earlywarnings',  'workorder_controller@earlywarnings');
 
