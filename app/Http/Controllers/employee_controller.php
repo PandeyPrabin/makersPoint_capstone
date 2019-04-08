@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use DB;
 
 class employee_controller extends Controller
 {
@@ -52,9 +53,13 @@ class employee_controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($employeeid)
     {
         //
+    }
+    public function editemployee($employeeid)
+    {
+        return $employeeid;
     }
 
     /**
@@ -75,8 +80,11 @@ class employee_controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteEmployee($id)
     {
-        //
+        $employee=Employee::find($id);
+        $employee->delete();
+        
+        return redirect('employeeProfile')->with('msg','Employee deleted');
     }
 }

@@ -23,23 +23,23 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th scope="col"><a href="/" class="header-link">Home</a></th>		
-							<th scope="col"><a href="/makeWorkOrder" class="header-link">Make work order</a></th>
-							<th scope="col"><a href="/workorders" class="header-link">Work orders</a></th>
-							<th scope="col"><a href="/earlywarnings" class="header-link">Early warnings</a></th>
-							<th scope="col"><a href="/machinetime" class="header-link">Machine time</a></th>
+							<th scope="col"><a href="{{ url('/')}}" class="header-link">Home</a></th>		
+							<th scope="col"><a href= "{{ url('/makeWorkOrder') }}" class="header-link">Make work order</a></th>
+							<th scope="col"><a href="{{ url('/workorders') }}" class="header-link">Work orders</a></th>
+							<th scope="col"><a href="{{ url('/earlywarnings') }}" class="header-link">Early warnings</a></th>
+							<th scope="col"><a href="{{ url('/machinetime') }}" class="header-link">Machine time</a></th>
 							<th scope="col"><a class="header-link">
                                 <div class="dropdown">
                                    <button class="dropbtn"><span class="header-link" >Reports </span>
                                      <i class="fa fa-caret-down"></i>
                                    </button>
                                    <div class="dropdown-content">
-                                     <a href="/subTask">Sub-task</a>
-                                     <a href="/machineReport">Machine time</a>
-                                     <a href="/materials">Materials</a>
+                                     <a href="{{ url('/subTask') }}">Sub-task</a>
+                                     <a href="{{ url('/machineReport') }}">Machine time</a>
+                                     <a href="{{ url('/materials') }}">Materials</a>
                                    </div>
                                  </div> </a></th>
-							<th scope="col"><a href="/control" class="header-link">Control</a></th>
+							<th scope="col"><a href="{{ url('/control') }}" class="header-link">Control</a></th>
 						</tr>
 					</thead>
 				</table>

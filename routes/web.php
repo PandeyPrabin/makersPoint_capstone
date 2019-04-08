@@ -42,12 +42,25 @@ Route::get('/workDetail/{workid}', 'workorder_controller@workDetail');
 
 Route::get('/earlywarnings',  'workorder_controller@earlywarnings');
 
+Route::get('/create-workprocess',  'workprocess_controller@create');
+
+Route::get('/workprocess',  'workprocess_controller@showworkprocess');
+
 
 Route::get('/machinetime', function () {
     return view('machinetime');
 });
 
 Route::get('employeeProfile','employee_controller@showemployee');
+
+Route::get('/edit-employee/{employeeid}','employee_controller@editemployee');
+
+Route::get('delete-employee','employee_controller@deleteEmployee');
+
+
+
+Route::get('customer','customer_controller@showCustomer');
+
 
 //Route::get('/employeeProfile', function () {
 //    return view('employeeProfile');
