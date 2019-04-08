@@ -17,18 +17,28 @@
     <th>??</th>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+      
+    <td>{{$workorder->workid}}</td>
+    <td><a href="/workDetail/{{$workorder->workid}}"class="header-link">{{$workorder->title}}</a></td>
+      
+      <form action="store" method="post">
+              <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+
    <td>
-        <div class="dropdown"><button class="dropbtn" >
-      <i class="fa fa-caret-down"></i>
-    </button>
+    <select id ="workstatus" name = "workstatus" onchange='this.form.submit()'>
       <div class="dropdown-content">
-      <a href="#">Not processing</a>
-      <a href="#">Processing</a>
-      <a href="#">Ready</a>
+      <option value="Not processing" >Not processing</option>
+      <option  value="Processing" >processing</option>
+      <option Value="Ready" >Ready</option>
+          
+          
+          
     </div>
-        </div></td>
+        </select>
+       
+       </td>
+          
+         </form>
     <td>
         <div class="dropdown"><button class="dropbtn" >
       <i class="fa fa-caret-down"></i>

@@ -10,6 +10,7 @@
 |
 */
 use App\Workorder;
+use App\Employee;
 use Illuminate\Http\Requests;
 
 Route::get('/', function () {
@@ -19,11 +20,16 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-
+Route::get('/addNewCustomer', function () {
+    return view('addNewCustomer');
+});
 
 Route::get('makeworkorder', 'workorder_controller@makeworkorder');
 //Route::get('editdetails', 'Makeworkorder_controller@edit');
 Route::post('store', 'workorder_controller@store');
+
+Route::post('put', 'workorder_controller@put');
+//Route::get('profile', 'employee_controller@index');
 
 
 Route::get('/makeWorkOrder', function () {
@@ -36,16 +42,34 @@ Route::get('/workorders', 'workorder_controller@workorders');
 //    return view('workorders');
 //});
 
-Route::get('/workDetail', function () {
-    return view('/workDetail');
-});
+Route::get('/workDetail/{workid}', 'workorder_controller@workDetail');
 
 Route::get('/earlywarnings',  'workorder_controller@earlywarnings');
+
+Route::get('/create-workprocess',  'workprocess_controller@create');
+
+Route::get('/workprocess',  'workprocess_controller@showworkprocess');
 
 
 Route::get('/machinetime', function () {
     return view('machinetime');
 });
+
+Route::get('employeeProfile','employee_controller@showemployee');
+
+Route::get('/edit-employee/{employeeid}','employee_controller@editemployee');
+
+Route::get('delete-employee','employee_controller@deleteEmployee');
+
+
+
+Route::get('customer','customer_controller@showCustomer');
+
+
+//Route::get('/employeeProfile', function () {
+//    return view('employeeProfile');
+//});
+
 
 Route::get('/subTask', function () {
     return view('subTask');

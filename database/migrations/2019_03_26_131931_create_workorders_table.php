@@ -14,18 +14,17 @@ class CreateWorkordersTable extends Migration
     public function up()
     {
         Schema::create('workorders', function (Blueprint $table) {
-            $table->unsignedinteger('work_id');
-            $table->string('title')->nullable;
-            $table->string('provider')->nullable;
-            $table->string('customer')->nullable;
-            $table->text('orderdate')->nullable;
-            $table->text('deadline')->nullable;
-            $table->text('absolutedeadline')->nullable;
-            $table->string('additionalinfo')->nullable;
-            $table->string('material')->nullable;
-            $table->string('deliveryby')->nullable;
-            $table->string('workstatus')->nullable;
-            $table->string('workstatus')->nullable;
+            $table->unsignedInteger('workid')->primary();
+            $table->string('title');
+            $table->string('provider')->nullable();
+            $table->string('customer')->nullable();
+            $table->text('orderdate');
+            $table->text('deadline');
+            $table->text('absolutedeadline')->nullable();
+            $table->string('additionalinfo')->nullable();
+            $table->string('material')->nullable();
+            $table->string('deliveryby')->nullable();
+            $table->string('workstatus')->nullable();
             
             
             $table->timestamps();

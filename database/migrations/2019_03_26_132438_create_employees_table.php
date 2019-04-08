@@ -14,12 +14,12 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->unsignedinteger('employeeid');
+            $table->unsignedInteger('employeeid',50);
             $table->string('firstname')->nullable;
             $table->string('lastname')->nullable;
-             $table->string('email')->nullable;
-             $table->string('phoneno')->nullable;
-             $table->text('address')->nullable;
+            $table->string('email',50)->nullable;
+            $table->string('phoneno')->nullable;
+            $table->text('address')->nullable;
 
             $table->timestamps();
         });
