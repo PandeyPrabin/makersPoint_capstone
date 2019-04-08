@@ -41,7 +41,7 @@ class workorder_controller extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'workid' => 'required',
+            'workid' => 'required|unique:workorders',
             'title' => 'required',
             'provider' => '',
             'customer' => '',

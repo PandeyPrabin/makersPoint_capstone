@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Employee;
+use App\Workprocess;
+use App\Task;
+use App\Machine;
+use App\Customer;
+use App\Workorder;
+
 
 class workprocess_controller extends Controller
 {
@@ -13,7 +20,8 @@ class workprocess_controller extends Controller
      */
     public function index()
     {
-        //
+             
+       
     }
 
     /**
@@ -23,7 +31,10 @@ class workprocess_controller extends Controller
      */
     public function create()
     {
-        //
+         $emp=Employee::find(1);
+        dd($emp);
+        
+        
     }
 
     /**
@@ -37,6 +48,13 @@ class workprocess_controller extends Controller
         //
     }
 
+    public function showworkprocess() {
+        
+        $workprocess=Workprocess::with('employees','tasks','machines')->get();
+        //dd($workprocess);
+        return view('workprocess', ['workprocess' => $workprocess]);
+    }
+    
     /**
      * Display the specified resource.
      *

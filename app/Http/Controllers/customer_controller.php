@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Customer;
 
 class customer_controller extends Controller
 {
@@ -43,9 +44,10 @@ class customer_controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCustomer()
     {
-        //
+        $customer=Customer::all();
+        return view('customer',compact('customer'));
     }
 
     /**
