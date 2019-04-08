@@ -14,13 +14,17 @@ use App\Employee;
 use Illuminate\Http\Requests;
 
 Route::get('/', function () {
+    return view('login');
+});
+
+Route::get('/home', function () {
     return view('home');
 });
 Route::get('/addNewCustomer', function () {
     return view('addNewCustomer');
 });
 
-Route::get('makeworkorder', 'Makeworkorder_controller@makeworkorder');
+Route::get('makeworkorder', 'workorder_controller@makeworkorder');
 //Route::get('editdetails', 'Makeworkorder_controller@edit');
 Route::post('store', 'workorder_controller@store');
 
@@ -81,5 +85,15 @@ Route::get('/materials', function () {
 Route::get('/control', function () {
     return view('control');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile-edit', function () {
+    return view('profile-edit');
+});
+
+
 
 

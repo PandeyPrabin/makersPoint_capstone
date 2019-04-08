@@ -16,11 +16,6 @@
     <th>info</th> 
     <th>??</th>
   </tr>
-
-           
-           @foreach($workorder as $workorder)
-           @if($workorder->material != 'No material')
-            
   <tr>
       
     <td>{{$workorder->workid}}</td>
@@ -49,18 +44,40 @@
       <i class="fa fa-caret-down"></i>
     </button>
       <div class="dropdown-content">
-      <a href="#">{{$workorder->provider}}</a>
-      <a href="#">{{$workorder->material}}</a>
+      <a href="#">Subcontractor</a>
+      <a href="#">material info here</a>
      
     </div>
         </div>
       </td>
     <td></td>
-  </tr> 
-           @endif
-
-@endforeach
-           
+  </tr>
+           <tr>
+        <td></td>
+    <td></td>
+   <td>
+        <div class="dropdown"><button class="dropbtn" >
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#">Not processing</a>
+      <a href="#">Processing</a>
+      <a href="#">Ready</a>
+    </div>
+        </div></td>
+    <td>
+        <div class="dropdown"><button class="dropbtn" >
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#">Subcontractor</a>
+      <a href="#">material info here</a>
+     
+    </div>
+        </div>
+      </td>
+    <td></td>
+  </tr>
   
 
 @endsection
