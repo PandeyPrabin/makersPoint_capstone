@@ -50,7 +50,8 @@ class workorder_controller extends Controller
             'absolutedeadline' => '',
             'additionalinfo' => '',
             'material' => '',
-            'delivery' => ''
+            'delivery' => '',
+            'workstatus' =>''
             
             ]);
         
@@ -65,6 +66,8 @@ class workorder_controller extends Controller
         $workorder->additionalinfo=Input::post("additionalinfo");
         $workorder->material=Input::post("material");
         $workorder->deliveryby=Input::post("deliveryby");
+        $workorder->deliveryby=Input::post("workstatus");
+        
     $workorder->save();
         
         
@@ -79,14 +82,24 @@ class workorder_controller extends Controller
      */
     public function workorders()
     {
-        $workorder=Workorder::all();
+        $workorder=Workorder::latest('workid')->get();
         return view('workorders',compact('workorder'));
     }
 
      public function earlywarnings()
     {
-        $workorder=Workorder::all();
+        $workorder=Workorder::latest('workid')->get();
         return view('earlywarnings',compact('workorder'));
+    }
+    
+    
+    
+    public function workDetail($workid)
+    {
+        
+        $workorder = Workorder::find($workid);
+        
+        return view('workDetail', compact('workorder'));
     }
     /**
      * Show the form for editing the specified resource.

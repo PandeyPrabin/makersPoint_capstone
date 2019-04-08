@@ -4,6 +4,16 @@
 
        
 
+@if($errors->any())
+     <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+    </div>
+@endif
 
 
 <form action="store" method="post" >
@@ -22,7 +32,7 @@
     <tr>
     <th rowspan="2">Provider</th>
     <td  ><input class="radio" type="radio" name="provider" value="Yes" contenteditable="false">Yes
-         <input  class="radio" type="radio" name="provider" value="No" contenteditable="false"> No 
+         <input  class="radio" type="radio" name="provider" value="No provider" contenteditable="false"> No 
       <tr> <td > <span margin-left= "5px" contenteditable="false">Provider Name:</span>
           <span>  <input type="text" name="provider" id="provider"></span></td>
         </tr>
@@ -72,19 +82,19 @@
   </tr>
     <tr>
     <th rowspan ="4">Delivery by:</th>
-    <td><input class="radio" type="radio" name="delivery" value="Customer retrives"> Customer retrives</td>
+    <td><input class="radio" type="radio" name="deliveryby" value="Customer retrives"> Customer retrives</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Mail"> Mail:</td>
+    <td><input class="radio" type="radio" name="deliveryby" value="Mail"> Mail:</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Matkahuolto"> Matkahuolto</td>
+    <td><input class="radio" type="radio" name="deliveryby" value="Matkahuolto"> Matkahuolto</td>
     </tr>
     
     <tr>
-    <td><input class="radio" type="radio" name="delivery" value="Other"> Other</td>
+    <td><input class="radio" type="radio" name="deliveryby" value="Other"> Other</td>
   </tr>
 
 </table>
@@ -93,16 +103,6 @@
 
 
 
-@if($errors->any())
-    <div>
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
-
-    </div>
-@endif
 
 
 

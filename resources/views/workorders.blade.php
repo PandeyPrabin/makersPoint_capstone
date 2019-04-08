@@ -24,19 +24,26 @@
   <tr>
       
     <td>{{$workorder->workid}}</td>
-    <td><a href="/workDetail" class="header-link">{{$workorder->title}}</a></td>
-   <td>
-        
-    <select>
-      <div class="dropdown-content">
-      <option id="Not processing" >Not processing</option>
-      <option id="processing" >processing</option>
-      <option id="ready" >ready</option>
+    <td><a href="/workDetail/{{$workorder->workid}}"class="header-link">{{$workorder->title}}</a></td>
+      
+      <form action="store" method="post">
+              <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
+   <td>
+    <select id ="workstatus" name = "workstatus" onchange='this.form.submit()'>
+      <div class="dropdown-content">
+      <option value="Not processing" >Not processing</option>
+      <option  value="Processing" >processing</option>
+      <option Value="Ready" >Ready</option>
+          
+          
           
     </div>
         </select>
+       
        </td>
+          
+         </form>
     <td>
         <div class="dropdown"><button class="dropbtn" >
       <i class="fa fa-caret-down"></i>
